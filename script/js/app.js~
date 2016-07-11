@@ -63,7 +63,7 @@ console.log(EM)
 	
 	console.log("pass");
 	
-	// array to show the output of user entered data	
+	// object to show the output of user entered data	
 	var data = {};
 	// click event on submit referrence
 	console.log("submit")
@@ -82,18 +82,17 @@ console.log(EM)
 		//showing the stored data
 		console.log(data);
 
-		
-		var user = new Newuser(data.username, data.password)	
-		function Newuser(name, password){
-			this.name = name;
+		function Newuser(username, password){
+			this.username = username;
 			this.password = password;
-			this.info = function(){
-				console.log("User ID: " + this.name);
-		                console.log("Password: " + this.password);
-			}
+		}
+		Newuser.prototype.info = function(){
+			console.log("username = " + this.username);
+			console.log("password = " + this.password);
 		}
 
-		
+ 		var user_a = new Newuser(data.username, data.password);
+		user_a.info();
 	});
 
 
